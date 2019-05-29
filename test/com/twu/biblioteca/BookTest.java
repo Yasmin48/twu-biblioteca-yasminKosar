@@ -35,7 +35,7 @@ public class BookTest {
     @Test
     public void testToStringMethod(){
 
-        String expectedResult = "All About Love Bell Hooks 2000";
+        String expectedResult = "All About Love - Bell Hooks, 2000";
 
         assertThat(testBook.toString(), is(equalTo(expectedResult)));
     }
