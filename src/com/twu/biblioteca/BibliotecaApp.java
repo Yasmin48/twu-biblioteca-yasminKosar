@@ -11,8 +11,6 @@ public class BibliotecaApp {
 
         LibraryGrid grid = new LibraryGrid(40, 30, 5);
         Library library = new Library();
-        Book invalidBook = new Book("test", "author", 2010);
-        Book testBook = new Book("Man's Search for Meaning", "Viktor Frankl", 1946);
         Menu menu = new Menu();
         menu.login(users);
         System.out.println(menu.welcomeMessage());
