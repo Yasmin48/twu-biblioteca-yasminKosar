@@ -46,7 +46,7 @@ public class Library {
         for (Book book : books) {
             if (book.getTitle().equals(bookTitle)) {
                 int index = books.indexOf(book);
-                System.out.println(index);
+                //System.out.println(index);
                 books.remove(index);
                 return  "Thank you! Enjoy the book";
             }
