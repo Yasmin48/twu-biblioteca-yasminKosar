@@ -14,18 +14,18 @@ public class UserTest {
     User testUser = new User(name, username, password);
 
     @Test
-    public void shouldGetNameOfUser() {
-        assertThat(testUser.getName(), is(name));
+    public void shouldReturnNameOfUser() {
+        assertThat(testUser.getName(), is(equalTo(name)));
     }
 
     @Test
-    public void shouldGetUsername() {
-        assertThat(testUser.getUsername(), is(username));
+    public void shouldReturnUsername() {
+        assertThat(testUser.getUsername(), is(equalTo(username)));
     }
 
     @Test
     public void shouldReturnPassword() {
-        assertThat(testUser.getPassword(), is(password));
+        assertThat(testUser.getPassword(), is(equalTo(password)));
     }
 }
 
