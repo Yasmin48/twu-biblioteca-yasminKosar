@@ -19,7 +19,7 @@ public class Menu {
         String password = getUserInput();
 
         for (User user : users) {
-            if (username.equals(user.getUsername()) && password.equals(user.getUsername())) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 this.loggedIn = true;
                 return "Welcome " + user.getName();
             }
