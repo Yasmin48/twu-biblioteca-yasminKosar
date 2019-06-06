@@ -10,15 +10,7 @@ public class Menu {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     }
 
-    public void runMenu(LibraryGrid grid, Library library, Book book) {
-            printMenu();
-            System.out.print("Enter option here: ");
-
-        int choice = Integer.valueOf(getUserInput());
-            performAction(choice, grid, library, book);
-    }
-
-    private void login(User user) {
+   private String login(User user) {
 
         System.out.println("Please login");
         System.out.println("Enter Username: ");
@@ -28,13 +20,21 @@ public class Menu {
 
         if(username.equals(user.getUsername()) && password.equals(user.getUsername())) {
             this.loggedIn = true;
+            return "Welcome " + user.getName();
         } else {
-            System.out.println("ERROR - Invalid input, please try again!");
+            return "ERROR - Invalid input, please try again!";
         }
-
     }
 
+    public void runMenu(LibraryGrid grid, Library library) {
+        if (loggedIn) {
+            printMenu();
+            System.out.print("Enter option here: ");
 
+            int choice = Integer.valueOf(getUserInput());
+            performAction(choice, grid, library);
+        }
+    }
     private void printMenu() {
         System.out.println("-----------------------------");
         System.out.println("Please select an option");
@@ -52,9 +52,7 @@ public class Menu {
         return choice;
     }
 
-
-
-    private void performAction(int choice, LibraryGrid grid, Library library, Book book) {
+    private void performAction(int choice, LibraryGrid grid, Library library) {
         switch (choice) {
             case 0:
                 System.out.println("Thank you for visiting Biblioteca, Good bye!");
@@ -74,18 +72,4 @@ public class Menu {
                 break;
         }
     }
-
-    public static void main(String[] args) {
-
-        LibraryGrid grid = new LibraryGrid(40, 30, 5);
-        Library library = new Library();
-        Menu menu = new Menu();
-        Book book = new Book("test", "author", 2010);
-
-        //menu.printMenu();
-
-        menu.runMenu(grid, library, book);
-       // System.out.println("hello");
-    }
-
 }
