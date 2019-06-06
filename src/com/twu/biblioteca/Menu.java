@@ -6,11 +6,11 @@ public class Menu {
 
     private boolean loggedIn = false;
 
-    public String welcomeMessage(){
+    public String welcomeMessage() {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     }
 
-   private String login(User user) {
+    public String login(User[] users) {
 
         System.out.println("Please login");
         System.out.println("Enter Username: ");
@@ -18,13 +18,16 @@ public class Menu {
         System.out.println("Enter Password: ");
         String password = getUserInput();
 
-        if(username.equals(user.getUsername()) && password.equals(user.getUsername())) {
-            this.loggedIn = true;
-            return "Welcome " + user.getName();
-        } else {
-            return "ERROR - Invalid input, please try again!";
+        for (User user : users) {
+            if (username.equals(user.getUsername()) && password.equals(user.getUsername())) {
+                this.loggedIn = true;
+                return "Welcome " + user.getName();
+            }
         }
+        return  "ERROR - Invalid input, please try again!";
     }
+
+
 
     public void runMenu(LibraryGrid grid, Library library) {
         if (loggedIn) {
