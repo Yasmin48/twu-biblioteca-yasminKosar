@@ -12,7 +12,7 @@ public class BibliotecaApp {
         LibraryGrid grid = new LibraryGrid(40, 30, 5);
         Library library = new Library();
         Menu menu = new Menu();
-        menu.login(users);
+        //menu.login(users);
         System.out.println(menu.welcomeMessage());
         System.out.println();
         menu.runMenu(grid, library);
@@ -26,7 +26,7 @@ public class BibliotecaApp {
 
        // System.out.println(library);
 
-        //Book invalidBook = new Book("Harry Potter", "J K Rowling", 2007);
+
       //  String result = library.checkoutBook();
         //System.out.println(result);
 
@@ -36,7 +36,6 @@ public class BibliotecaApp {
 //         System.out.println(library);
 //         System.out.println(returnResponse);
 
-//         Book book = new Book("Man's Search for Meaning", "Viktor Frankl", 1946);
 //         String validReturn = library.returnBook(book);
 //         System.out.println(library);
 //         System.out.println(validReturn);

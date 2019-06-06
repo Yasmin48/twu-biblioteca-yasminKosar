@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private boolean loggedIn = false;
+    private boolean loggedIn = true;
 
     public String welcomeMessage() {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
