@@ -18,7 +18,7 @@ public class BibliotecaApp {
         menu.runMenu(grid, library);
 
 
-
+        //System.out.println(library);
 
 
         //String response = library.checkoutBook();

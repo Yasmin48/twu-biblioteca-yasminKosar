@@ -14,7 +14,7 @@ public class UserTest {
     User testUser = new User(name, username, password);
 
     @Test
-    public void shouldReturnNameOfUser() {
+    public void shouldReturnName() {
         assertThat(testUser.getName(), is(equalTo(name)));
     }
 

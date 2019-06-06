@@ -51,7 +51,7 @@ public class Menu {
     private String getUserInput() {
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine();
-        scanner.close();
+        //scanner.close();
         return choice;
     }
 
@@ -70,6 +70,7 @@ public class Menu {
                 break;
             case 3:
                 library.checkoutBook();
+                break;
             default:
                 System.out.println("Invalid choice! ");
                 break;
