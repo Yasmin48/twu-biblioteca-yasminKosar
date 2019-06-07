@@ -1,10 +1,11 @@
 package com.twu.biblioteca;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
 
-    private boolean loggedIn = false;
+    private boolean loggedIn = true;
 
     public String welcomeMessage() {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
@@ -29,13 +30,13 @@ public class Menu {
 
 
 
-    public void runMenu(LibraryGrid grid, Library library) {
+    public void runMenu(LibraryGrid grid, Library library, Book[] books) {
         if (loggedIn) {
             printMenu();
             System.out.print("Enter option here: ");
 
             int choice = Integer.valueOf(getUserInput());
-            performAction(choice, grid, library);
+            performAction(choice, grid, library, books);
         }
     }
     private void printMenu() {
@@ -44,6 +45,7 @@ public class Menu {
         System.out.println("1) View list of books");
         System.out.println("2) Return a book");
         System.out.println("3) Checkout a book");
+        System.out.println("4) View list of movies");
         System.out.println("0) Exit");
         System.out.println("------------------------------");
     }
@@ -55,7 +57,7 @@ public class Menu {
         return choice;
     }
 
-    private void performAction(int choice, LibraryGrid grid, Library library) {
+    private void performAction(int choice, LibraryGrid grid, Library library, Book[] books ) {
         switch (choice) {
             case 0:
                 System.out.println("Thank you for visiting Biblioteca, Good bye!");
@@ -76,4 +78,9 @@ public class Menu {
                 break;
         }
     }
+
+
+
+
+
 }

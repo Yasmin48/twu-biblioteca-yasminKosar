@@ -10,8 +10,10 @@ public class UserTest {
     String name = "Yasmin";
     String username = "yasminkosar";
     String password = "Password";
+    String email = "yasmin@gmail.com";
+    String phone = "123 4567";
 
-    User testUser = new User(name, username, password);
+    User testUser = new User(name, username, password, email, phone);
 
     @Test
     public void shouldReturnName() {
@@ -26,6 +28,16 @@ public class UserTest {
     @Test
     public void shouldReturnPassword() {
         assertThat(testUser.getPassword(), is(equalTo(password)));
+    }
+
+    @Test
+    public void shouldReturnEmail() {
+        assertThat(testUser.getEmail(), is(email));
+    }
+
+    @Test
+    public void shouldReturnPhone(){
+        assertThat(testUser.getPhone(), is(phone));
     }
 
     @Test
@@ -44,6 +56,18 @@ public class UserTest {
     public void shouldSetPassword() {
         testUser.setPassword("wordpass");
         assertThat("wordpass", is(equalTo(testUser.getPassword())));
+    }
+
+    @Test
+    public void shouldSetEmail() {
+        testUser.setEmail("test@hotmail.com");
+        assertThat("test@hotmail.com", is(equalTo(testUser.getEmail())));
+    }
+
+    @Test
+    public void shouldSetPhone() {
+        testUser.setPhone("098 1234");
+        assertThat("098 1234", is(equalTo(testUser.getPhone())));
     }
 }
 

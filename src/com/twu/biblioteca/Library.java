@@ -34,9 +34,6 @@ public class Library {
         return this.movies;
     }
 
-    // Directly mutating the state
-    // change the onLoan field to true or false;
-
     public void returnBook() {
         String bookTitle  = requestUserInput();
 
@@ -44,13 +41,12 @@ public class Library {
                 if(book.getTitle().equals(bookTitle)){
                 book.setOnLoan(false);
                 System.out.println("Thank you for returning the book");
+                break;
             }
         }
         System.out.println("Sorry, this book does not belong to the library!");
     }
 
-    // Directly mutating the state!!
-    // Maybe add onLoan field to book and change that instead of removing the book
 
     public void checkoutBook() {
         String bookTitle = requestUserInput();
@@ -59,6 +55,7 @@ public class Library {
             if (book.getTitle().equals(bookTitle)) {
                 book.setOnLoan(true);
                 System.out.println("Thank you! Enjoy the book");
+                break;
             }
         }
        System.out.println("Sorry, this book is not available");
