@@ -35,4 +35,16 @@ public class MovieTest {
         assertThat(movie.getRating(), is(equalTo(rating)));
     }
 
+    @Test
+    public void shouldSetDireector() {
+        movie.setDirector("R Coogler");
+        assertThat("R Coogler", is(equalTo(movie.getDirector())));
+    }
+
+    @Test
+    public void shouldSetRating() {
+        movie.setRating(9.0);
+        assertThat(9.0, is(equalTo(movie.getRating())));
+    }
+
 }
