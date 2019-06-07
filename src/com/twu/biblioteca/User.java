@@ -4,16 +4,16 @@ public class User {
 
 
     private  String name;
-    private  String username;
+    private  String libraryNo;
     private  String password;
     private  String email;
     private  String phone;
 
 
-    public User(String name, String username, String password, String email, String phone) {
+    public User(String name, String libraryNo, String password, String email, String phone) {
 
         this.name = name;
-        this.username = username;
+        this.libraryNo = libraryNo;
         this.password = password;
         this.email = email;
         this.phone = phone;
@@ -23,8 +23,8 @@ public class User {
         return this.name;
     }
 
-    public String getUsername(){
-        return this.username;
+    public String getLibraryNo(){
+        return this.libraryNo;
     }
 
     public String getPassword(){
@@ -43,8 +43,8 @@ public class User {
         this.name = name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLibraryNo(String libraryNo) {
+        this.libraryNo = libraryNo;
     }
 
     public void setPassword(String password) {

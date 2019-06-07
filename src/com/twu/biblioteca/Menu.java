@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -20,7 +19,7 @@ public class Menu {
         String password = getUserInput();
 
         for (User user : users) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+            if (user.getLibraryNo().equals(username) && user.getPassword().equals(password)) {
                 this.loggedIn = true;
                 return "Welcome " + user.getName();
             }
@@ -30,13 +29,13 @@ public class Menu {
 
 
 
-    public void runMenu(LibraryGrid grid, Library library, Book[] books) {
+    public void runMenu(LibraryGrid grid, Library library) {
         if (loggedIn) {
             printMenu();
             System.out.print("Enter option here: ");
 
             int choice = Integer.valueOf(getUserInput());
-            performAction(choice, grid, library, books);
+            performAction(choice, grid, library);
         }
     }
     private void printMenu() {
@@ -46,6 +45,8 @@ public class Menu {
         System.out.println("2) Return a book");
         System.out.println("3) Checkout a book");
         System.out.println("4) View list of movies");
+        System.out.println("5) Return a movie");
+        System.out.println("6) Checkout a movie");
         System.out.println("0) Exit");
         System.out.println("------------------------------");
     }
@@ -53,11 +54,10 @@ public class Menu {
     private String getUserInput() {
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine();
-        //scanner.close();
         return choice;
     }
 
-    private void performAction(int choice, LibraryGrid grid, Library library, Book[] books ) {
+    private void performAction(int choice, LibraryGrid grid, Library library) {
         switch (choice) {
             case 0:
                 System.out.println("Thank you for visiting Biblioteca, Good bye!");

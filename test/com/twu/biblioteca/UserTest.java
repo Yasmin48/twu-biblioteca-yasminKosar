@@ -8,12 +8,12 @@ import static org.junit.Assert.assertThat;
 public class UserTest {
 
     String name = "Yasmin";
-    String username = "yasminkosar";
+    String libraryNo = "123 4567";
     String password = "Password";
     String email = "yasmin@gmail.com";
     String phone = "123 4567";
 
-    User testUser = new User(name, username, password, email, phone);
+    User testUser = new User(name, libraryNo, password, email, phone);
 
     @Test
     public void shouldReturnName() {
@@ -21,8 +21,8 @@ public class UserTest {
     }
 
     @Test
-    public void shouldReturnUsername() {
-        assertThat(testUser.getUsername(), is(equalTo(username)));
+    public void shouldReturnLibraryNo() {
+        assertThat(testUser.getLibraryNo(), is(equalTo(libraryNo)));
     }
 
     @Test
@@ -47,9 +47,9 @@ public class UserTest {
     }
 
     @Test
-    public void shouldSetUsername() {
-        testUser.setUsername("username");
-        assertThat("username", is(equalTo(testUser.getUsername())));
+    public void shouldSeLibraryNo() {
+        testUser.setLibraryNo("libraryNo");
+        assertThat("libraryNo", is(equalTo(testUser.getLibraryNo())));
     }
 
     @Test
