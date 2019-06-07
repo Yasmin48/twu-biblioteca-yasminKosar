@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -7,6 +8,7 @@ import java.util.Scanner;
 public class Library {
 
     private ArrayList<Book> books;
+    private ArrayList<Movie> movies;
 
     public Library(){
         this.books = new ArrayList<Book>(Arrays.asList(
@@ -15,13 +17,25 @@ public class Library {
                 new Book("God of Small Things", "Arundhati Roy", 1997, false),
                 new Book("One Hundred Years of Solitude", "Gabriel García Márquez ", 1967, false),
                 new Book("Man's Search for Meaning", "Viktor Frankl", 1946, false)));
+
+        this.movies = new ArrayList(Arrays.asList(
+                new Movie("test", "jade", 2000, 9.0, false),
+                new Movie("am a movie title", "director", 1999, 8.5, true),
+                new Movie("another movie title", "another director", 1985, 7.5, false),
+                new Movie("a movie", "a director", 2015, 8.5, false)
+        ));
     }
 
     public ArrayList<Book> getBooks() {
         return books;
     }
 
+    public ArrayList<Movie>getMovies() {
+        return this.movies;
+    }
+
     // Directly mutating the state
+    // change the onLoan field to true or false;
 
     public void returnBook() {
         String bookTitle  = requestUserInput();
@@ -53,11 +67,9 @@ public class Library {
     }
 
     private String requestUserInput() {
-        System.out.println("Please enter the book title: ");
+        System.out.println("Please enter the item title: ");
         String title  = getUserInput();
-
         return title;
-
     }
 
     private String getUserInput() {

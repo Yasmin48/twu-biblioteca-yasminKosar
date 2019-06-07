@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private boolean loggedIn = true;
+    private boolean loggedIn = false;
 
     public String welcomeMessage() {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
@@ -72,7 +72,7 @@ public class Menu {
                 library.checkoutBook();
                 break;
             default:
-                System.out.println("Invalid choice! ");
+                System.out.println("Please select a valid option!");
                 break;
         }
     }
