@@ -36,9 +36,5 @@ public class LibraryItem {
     public void setOnLoan(boolean onLoan) {
         this.onLoan = onLoan;
     }
-
-
-
-
 }
 

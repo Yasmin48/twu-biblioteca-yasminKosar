@@ -1,8 +1,6 @@
 package com.twu.biblioteca;
 
 public class Book extends LibraryItem{
-
-
     private String author;
 
     public Book(String title, String author, int year, boolean onLoan) {
@@ -17,7 +15,6 @@ public class Book extends LibraryItem{
     public void setAuthor(String author) {
         this.author = author;
     }
-
 
     @Override
     public String toString(){

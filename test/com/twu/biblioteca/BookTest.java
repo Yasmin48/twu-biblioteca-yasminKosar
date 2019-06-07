@@ -25,21 +25,19 @@ public class BookTest {
     }
 
     @Test
+    public void getsYearOfBook(){
+        assertThat(testBook.getYear(), is(equalTo(testYear)));
+    }
+
+    @Test
     public void setAuthor() {
         testBook.setAuthor("B Hooks");
         assertThat("B Hooks", is(equalTo(testBook.getAuthor())));
     }
 
     @Test
-    public void getsYearOfBook(){
-        assertThat(testBook.getYear(), is(equalTo(testYear)));
-    }
-
-    @Test
     public void testToStringMethod(){
-
         String expectedResult = "All About Love - Bell Hooks, 2000";
-
         assertThat(testBook.toString(), is(equalTo(expectedResult)));
     }
 }

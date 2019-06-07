@@ -3,9 +3,9 @@ package com.twu.biblioteca;
 public class User {
 
 
-    private final String name;
-    private final String username;
-    private final String password;
+    private  String name;
+    private  String username;
+    private  String password;
 
 
     public User(String name, String username, String password) {
@@ -27,5 +27,15 @@ public class User {
         return this.password;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
