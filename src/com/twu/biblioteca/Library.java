@@ -42,7 +42,7 @@ public class Library {
 
         for(Book book : books){
                 if(book.getTitle().equals(bookTitle)){
-                books.add(book);
+                book.setOnLoan(false);
                 System.out.println("Thank you for returning the book");
             }
         }
@@ -57,9 +57,7 @@ public class Library {
 
         for (Book book : books) {
             if (book.getTitle().equals(bookTitle)) {
-                int index = books.indexOf(book);
-                //System.out.println(index);
-                books.remove(index);
+                book.setOnLoan(true);
                 System.out.println("Thank you! Enjoy the book");
             }
         }
