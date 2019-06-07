@@ -10,10 +10,11 @@ public class Library {
 
     public Library(){
         this.books = new ArrayList<Book>(Arrays.asList(
-                new Book("The House on Mango Street", "Sandra Cisneros", 1984),
-                new Book("The Alchemist", "Paulo Coelho", 1988), new Book("God of Small Things", "Arundhati Roy", 1997),
-                new Book("One Hundred Years of Solitude", "Gabriel García Márquez ", 1967),
-                new Book("Man's Search for Meaning", "Viktor Frankl", 1946)));
+                new Book("The House on Mango Street", "Sandra Cisneros", 1984, false),
+                new Book("The Alchemist", "Paulo Coelho", 1988, false),
+                new Book("God of Small Things", "Arundhati Roy", 1997, false),
+                new Book("One Hundred Years of Solitude", "Gabriel García Márquez ", 1967, false),
+                new Book("Man's Search for Meaning", "Viktor Frankl", 1946, false)));
     }
 
     public ArrayList<Book> getBooks() {
@@ -21,38 +22,42 @@ public class Library {
     }
 
     // Directly mutating the state
-    // not returning either of the return statements here
-    public String returnBook() {
-        // need to check the book belongs to the library
-        System.out.println("Please enter the title of the item being returned: ");
-        String bookTitle  = getUserInput();
+
+    public void returnBook() {
+        String bookTitle  = requestUserInput();
 
         for(Book book : books){
                 if(book.getTitle().equals(bookTitle)){
                 books.add(book);
-                return "Thank you for returning the book";
+                System.out.println("Thank you for returning the book");
             }
         }
-        return "Sorry, this book does not belong to the library!";
+        System.out.println("Sorry, this book does not belong to the library!");
     }
 
     // Directly mutating the state!!
     // Maybe add onLoan field to book and change that instead of removing the book
-    // Neither return statement is being returned
-    public String checkoutBook() {
-        System.out.println("Please enter the book title: ");
-        String bookTitle  = getUserInput();
+
+    public void checkoutBook() {
+        String bookTitle = requestUserInput();
 
         for (Book book : books) {
             if (book.getTitle().equals(bookTitle)) {
                 int index = books.indexOf(book);
                 //System.out.println(index);
                 books.remove(index);
-                return  "Thank you! Enjoy the book";
+                System.out.println("Thank you! Enjoy the book");
             }
         }
-       // System.out.println("Sorry, this book is not available");
-        return "Sorry, this book is not available";
+       System.out.println("Sorry, this book is not available");
+    }
+
+    private String requestUserInput() {
+        System.out.println("Please enter the book title: ");
+        String title  = getUserInput();
+
+        return title;
+
     }
 
     private String getUserInput() {

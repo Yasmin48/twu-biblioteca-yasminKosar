@@ -17,30 +17,6 @@ public class BibliotecaApp {
         System.out.println();
         menu.runMenu(grid, library);
 
-
         //System.out.println(library);
-
-
-        //String response = library.checkoutBook();
-        //System.out.println(response); // checked out book not showing on the list;
-
-       // System.out.println(library);
-
-
-      //  String result = library.checkoutBook();
-        //System.out.println(result);
-
-        //System.out.println(library);
-
-//         String returnResponse = library.returnBook();
-//         System.out.println(library);
-//         System.out.println(returnResponse);
-
-//         String validReturn = library.returnBook(book);
-//         System.out.println(library);
-//         System.out.println(validReturn);
-
-
-
     }
 }

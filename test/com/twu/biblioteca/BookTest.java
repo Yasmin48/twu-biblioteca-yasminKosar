@@ -10,8 +10,9 @@ public class BookTest {
     String testTitle = "All About Love";
     String testAuthor = "Bell Hooks";
     int testYear = 2000;
+    boolean onLoan = false;
 
-    Book testBook = new Book(testTitle, testAuthor, testYear);
+    Book testBook = new Book(testTitle, testAuthor, testYear, onLoan);
 
     @Test
     public void getsTitleOfBook(){
@@ -21,6 +22,12 @@ public class BookTest {
     @Test
     public void getsAuthorOfBook() {
         assertThat(testBook.getAuthor(), is(equalTo(testAuthor)));
+    }
+
+    @Test
+    public void setAuthor() {
+        testBook.setAuthor("B Hooks");
+        assertThat("B Hooks", is(equalTo(testBook.getAuthor())));
     }
 
     @Test
