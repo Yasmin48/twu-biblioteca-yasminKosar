@@ -4,41 +4,40 @@ import java.util.Scanner;
 
 public class Menu {
 
-    private boolean loggedIn = true;
+    private boolean loggedIn;
 
     public String welcomeMessage() {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     }
 
-    public String login(User[] users) {
-
-
+    // incorrect output on correct login
+    // not working for correct inputs
+    public void login(User[] users) {
         System.out.println("Please enter your library number: ");
         String libraryNo = getUserInput();
-        System.out.println("Enter Password: ");
+        System.out.println("Please enter your password: ");
         String password = getUserInput();
 
         for (User user : users) {
-            if (user.getLibraryNo().equals(libraryNo) && user.getPassword().equals(password)) {
-                this.loggedIn = true;
-                break;
+          if (user.getLibraryNo().equals(libraryNo) && user.getPassword().equals(password)) {
+              this.loggedIn = true;
+              System.out.println("Welcome, " + user.getName());
+              break;
             }
         }
-        return  "ERROR - Invalid input, please try again!";
+        if(!loggedIn) {
+            System.out.println("Sorry, incorrect library number and password");
+        }
     }
 
-
-
     public void runMenu(LibraryGrid grid, Library library) {
-
-        String option = getUserInput();
-        do {
+        if(loggedIn) {
             printMenu();
             System.out.print("Enter option here: ");
 
             int choice = Integer.valueOf(getUserInput());
             performAction(choice, grid, library);
-        } while (!option.equals("0"));
+        };
     }
     private void printMenu() {
         System.out.println("-----------------------------");

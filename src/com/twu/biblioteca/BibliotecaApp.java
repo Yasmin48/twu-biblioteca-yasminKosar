@@ -6,7 +6,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
 
         User[] users = {
-                new User("Yasmin","123 4576","password", "email@hotmail.com", "023 4567"),
+                new User("Yasmin","123 4567","password", "email@hotmail.com", "023 4567"),
                 new User("Jade","456 1234","Password", "email@gmal.com", "123 4567")
         };
 
