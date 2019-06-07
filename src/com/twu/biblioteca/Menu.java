@@ -10,8 +10,7 @@ public class Menu {
         return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     }
 
-    // incorrect output on correct login
-    // not working for correct inputs
+
     public void login(User[] users) {
         System.out.println("Please enter your library number: ");
         String libraryNo = getUserInput();
@@ -20,6 +19,8 @@ public class Menu {
 
         for (User user : users) {
           if (user.getLibraryNo().equals(libraryNo) && user.getPassword().equals(password)) {
+              System.out.println(password);
+              System.out.println(libraryNo);
               this.loggedIn = true;
               System.out.println("Welcome, " + user.getName());
               break;
@@ -79,9 +80,4 @@ public class Menu {
                 break;
         }
     }
-
-
-
-
-
 }

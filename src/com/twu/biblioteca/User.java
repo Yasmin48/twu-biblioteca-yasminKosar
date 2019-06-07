@@ -3,11 +3,11 @@ package com.twu.biblioteca;
 public class User {
 
 
-    private  String name;
-    private  String libraryNo;
-    private  String password;
-    private  String email;
-    private  String phone;
+    private String name;
+    private String libraryNo;
+    private String password;
+    private String email;
+    private String phone;
 
 
     public User(String name, String libraryNo, String password, String email, String phone) {
@@ -19,15 +19,15 @@ public class User {
         this.phone = phone;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getLibraryNo(){
+    public String getLibraryNo() {
         return this.libraryNo;
     }
 
-    public String getPassword(){
+    public String getPassword() {
         return this.password;
     }
 
@@ -58,4 +58,5 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }

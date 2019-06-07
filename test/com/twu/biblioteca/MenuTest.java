@@ -8,6 +8,11 @@ import static org.junit.Assert.assertThat;
 public class MenuTest {
 
     Menu menu = new Menu();
+    User[] users = {
+            new User("Yasmin","123 4567","password", "email@hotmail.com", "023 4567"),
+            new User("Jade","456 1234","Password", "email@gmal.com", "123 4567")
+    };
+
 
     @Test
     public void shouldReturnWelcomeMessage() {
@@ -17,4 +22,6 @@ public class MenuTest {
 
         assertThat(actual, is(equalTo(expected)));
     }
+
+
 }

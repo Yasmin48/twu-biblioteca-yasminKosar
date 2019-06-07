@@ -34,31 +34,41 @@ public class Library {
         return this.movies;
     }
 
-    public void returnBook() {
-        String bookTitle  = requestUserInput();
 
-        for(Book book : books){
-                if(book.getTitle().equals(bookTitle)){
+    public void returnBook() {
+        String bookTitle = requestUserInput();
+
+        boolean validItem = false;
+        for (Book book : books) {
+            if (book.getTitle().equals(bookTitle)) {
                 book.setOnLoan(false);
+                validItem = true;
                 System.out.println("Thank you for returning the book");
                 break;
             }
         }
-        System.out.println("Sorry, this book does not belong to the library!");
+        if (!validItem) {
+            System.out.println("Sorry, this book does not belong to the library!");
+        }
     }
 
 
     public void checkoutBook() {
         String bookTitle = requestUserInput();
 
+        boolean itemAvailable = false;
         for (Book book : books) {
             if (book.getTitle().equals(bookTitle)) {
                 book.setOnLoan(true);
+                itemAvailable = true;
                 System.out.println("Thank you! Enjoy the book");
                 break;
             }
         }
-       System.out.println("Sorry, this book is not available");
+        if(!itemAvailable) {
+            System.out.println("Sorry, this book is not available");
+
+        }
     }
 
     private String requestUserInput() {

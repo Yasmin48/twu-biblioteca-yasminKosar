@@ -17,7 +17,5 @@ public class BibliotecaApp {
         System.out.println(menu.welcomeMessage());
         System.out.println();
         menu.runMenu(grid, library);
-
-        //System.out.println(library);
     }
 }
