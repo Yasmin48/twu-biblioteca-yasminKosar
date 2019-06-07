@@ -12,16 +12,16 @@ public class Menu {
 
     public String login(User[] users) {
 
-        System.out.println("Please login");
-        System.out.println("Enter Username: ");
-        String username = getUserInput();
+
+        System.out.println("Please enter your library number: ");
+        String libraryNo = getUserInput();
         System.out.println("Enter Password: ");
         String password = getUserInput();
 
         for (User user : users) {
-            if (user.getLibraryNo().equals(username) && user.getPassword().equals(password)) {
+            if (user.getLibraryNo().equals(libraryNo) && user.getPassword().equals(password)) {
                 this.loggedIn = true;
-                return "Welcome " + user.getName();
+                break;
             }
         }
         return  "ERROR - Invalid input, please try again!";
@@ -30,13 +30,15 @@ public class Menu {
 
 
     public void runMenu(LibraryGrid grid, Library library) {
-        if (loggedIn) {
+
+        String option = getUserInput();
+        do {
             printMenu();
             System.out.print("Enter option here: ");
 
             int choice = Integer.valueOf(getUserInput());
             performAction(choice, grid, library);
-        }
+        } while (!option.equals("0"));
     }
     private void printMenu() {
         System.out.println("-----------------------------");
