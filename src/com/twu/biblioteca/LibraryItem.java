@@ -25,9 +25,19 @@ public class LibraryItem {
         return onLoan;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
     public void setOnLoan(boolean onLoan) {
         this.onLoan = onLoan;
     }
+
+
 
 
 }

@@ -11,12 +11,13 @@ public class MovieTest {
     String director = "Ryan Coogler";
     int year = 2018;
     double rating = 8.5;
+    boolean onLoan = false;
 
-    Movie movie = new Movie(name, director, year, rating);
+    Movie movie = new Movie(name, director, year, rating, onLoan);
 
     @Test
     public void shouldReturnName() {
-        assertThat(movie.getName(), is(name));
+        assertThat(movie.getTitle(), is(name));
     }
 
     @Test

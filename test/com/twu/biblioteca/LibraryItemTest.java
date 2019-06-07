@@ -32,6 +32,18 @@ public class LibraryItemTest {
     }
 
     @Test
+    public void shouldSetTitle() {
+        item.setTitle("Harry Potter");
+        assertThat("Harry Potter", is(equalTo(item.getTitle())));
+    }
+
+    @Test
+    public void shouldSetYear() {
+        item.setYear(1997);
+        assertThat(1997, is(equalTo(item.getYear())));
+    }
+
+    @Test
     public void shouldSetOnLoan() {
         item.setOnLoan(true);
         assertThat(true, is(item.getOnLoan()));
