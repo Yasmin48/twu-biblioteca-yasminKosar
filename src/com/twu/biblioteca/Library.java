@@ -44,7 +44,7 @@ public class Library {
                 book.setOnLoan(false);
                 validItem = true;
                 System.out.println("Thank you for returning the book");
-                break;
+
             }
         }
         if (!validItem) {

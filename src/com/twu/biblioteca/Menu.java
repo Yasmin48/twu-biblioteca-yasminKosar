@@ -33,24 +33,32 @@ public class Menu {
 
     public void runMenu(LibraryGrid grid, Library library) {
         if(loggedIn) {
-            printMenu();
-            System.out.print("Enter option here: ");
+            int choice;
+            do {
+                printMenu();
+                System.out.print("Enter option here: ");
 
-            int choice = Integer.valueOf(getUserInput());
-            performAction(choice, grid, library);
-        };
+                choice = Integer.valueOf(getUserInput());
+                //System.out.println(choice);
+                performAction(choice, grid, library);
+
+            } while (choice != 0);
+            System.out.println(choice);
+
+        }
     }
+
     private void printMenu() {
-        System.out.println("-----------------------------");
-        System.out.println("Please select an option");
-        System.out.println("1) View list of books");
-        System.out.println("2) Return a book");
-        System.out.println("3) Checkout a book");
-        System.out.println("4) View list of movies");
-        System.out.println("5) Return a movie");
-        System.out.println("6) Checkout a movie");
-        System.out.println("0) Exit");
-        System.out.println("------------------------------");
+            System.out.println("-----------------------------");
+            System.out.println("Please select an option");
+            System.out.println("1) View list of books");
+            System.out.println("2) Return a book");
+            System.out.println("3) Checkout a book");
+            System.out.println("4) View list of movies");
+            System.out.println("5) Return a movie");
+            System.out.println("6) Checkout a movie");
+            System.out.println("0) Exit");
+            System.out.println("------------------------------");
     }
 
     private String getUserInput() {
@@ -58,6 +66,8 @@ public class Menu {
         String choice = scanner.nextLine();
         return choice;
     }
+
+
 
     private void performAction(int choice, LibraryGrid grid, Library library) {
         switch (choice) {
