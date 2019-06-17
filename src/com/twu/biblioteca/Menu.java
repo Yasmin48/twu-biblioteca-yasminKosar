@@ -43,7 +43,7 @@ public class Menu {
                 performAction(choice, grid, library);
 
             } while (choice != 0);
-            System.out.println(choice);
+            //System.out.println(choice);
 
         }
     }

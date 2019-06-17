@@ -12,7 +12,7 @@ public class Library {
 
     public Library(){
         this.books = new ArrayList<Book>(Arrays.asList(
-                new Book("The House on Mango Street", "Sandra Cisneros", 1984, true),
+                new Book("The House on Mango Street", "Sandra Cisneros", 1984, false),
                 new Book("The Alchemist", "Paulo Coelho", 1988, false),
                 new Book("God of Small Things", "Arundhati Roy", 1997, false),
                 new Book("One Hundred Years of Solitude", "Gabriel García Márquez ", 1967, false),
@@ -40,34 +40,32 @@ public class Library {
 
         boolean validItem = false;
         for (Book book : books) {
-            if (book.getTitle().equals(bookTitle)) {
+            if (book.getTitle().equals(bookTitle) && book.getOnLoan()) {
                 book.setOnLoan(false);
                 validItem = true;
                 System.out.println("Thank you for returning the book");
-
+                break;
             }
         }
         if (!validItem) {
-            System.out.println("Sorry, this book does not belong to the library!");
+            System.out.println("Sorry, this is an invalid entry!");
         }
     }
-
 
     public void checkoutBook() {
         String bookTitle = requestUserInput();
 
         boolean itemAvailable = false;
         for (Book book : books) {
-            if (book.getTitle().equals(bookTitle)) {
-                book.setOnLoan(true);
-                itemAvailable = true;
-                System.out.println("Thank you! Enjoy the book");
-                break;
+            if (book.getTitle().equals(bookTitle) && !book.getOnLoan()) {
+                    book.setOnLoan(true);
+                    itemAvailable = true;
+                    System.out.println("Thank you! Enjoy the book");
+                    break;
             }
         }
         if(!itemAvailable) {
             System.out.println("Sorry, this book is not available");
-
         }
     }
 
@@ -80,7 +78,6 @@ public class Library {
     private String getUserInput() {
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine();
-        scanner.close();
         return choice;
     }
 
