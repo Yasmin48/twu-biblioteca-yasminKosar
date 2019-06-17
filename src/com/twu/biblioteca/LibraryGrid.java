@@ -18,7 +18,9 @@ public class LibraryGrid {
         System.out.println(getSeparatorLine());
 
         for (Book book : library.getBooks()) {
-            System.out.println(getContentLine(book.getTitle(), book.getAuthor(), Integer.toString(book.getYear())));
+            if (!book.getOnLoan()) {
+                System.out.println(getContentLine(book.getTitle(), book.getAuthor(), Integer.toString(book.getYear())));
+            }
         }
 
         System.out.println(getSeparatorLine());

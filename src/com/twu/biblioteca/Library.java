@@ -12,7 +12,7 @@ public class Library {
 
     public Library(){
         this.books = new ArrayList<Book>(Arrays.asList(
-                new Book("The House on Mango Street", "Sandra Cisneros", 1984, false),
+                new Book("The House on Mango Street", "Sandra Cisneros", 1984, true),
                 new Book("The Alchemist", "Paulo Coelho", 1988, false),
                 new Book("God of Small Things", "Arundhati Roy", 1997, false),
                 new Book("One Hundred Years of Solitude", "Gabriel García Márquez ", 1967, false),
